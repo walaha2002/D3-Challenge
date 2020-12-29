@@ -35,7 +35,7 @@ d3.csv("data.csv").then(function (data) {
     // Step 2: Create scale functions
     // ==============================
     var xLinearScale = d3.scaleLinear()
-        .domain([25, d3.max(data, d => d.age)])
+        .domain([28, d3.max(data, d => d.age)])
         .range([0, width]);
 
     var yLinearScale = d3.scaleLinear()
@@ -66,7 +66,50 @@ d3.csv("data.csv").then(function (data) {
         .attr("cy", d => yLinearScale(d.smokes))
         .attr("r", "15")
         .attr("fill", "lightblue")
-        .attr("opacity", ".5");
+        .attr("opacity", ".5")
+//Added labels to circles using post on stackoverflow
+//Source: https://stackoverflow.com/questions/55988709/how-can-i-add-labels-inside-the-points-in-a-scatterplot
+
+    var stateLabel = chartGroup.selectAll(null).data(data).enter().append("text");
+
+    stateLabel
+        .attr("x", function (d) {
+            return xLinearScale(d.age);
+        })
+        .attr("y", function (d) {
+            return yLinearScale(d.smokes);
+        })
+        .text(function (d) {
+            return d.abbr;
+        })
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "10px")
+        .attr("text-anchor", "middle")
+        .attr("fill", "darkblue");
+
+    // var gdots =  svg.selectAll("g.dot")
+    // .data(data)
+    // .enter().append('g');
+
+    // gdots.append("text").text(function(d){
+    //     return d.name;
+    // })
+    // .attr("x", function (d) {
+    //     return x(d.x);
+    // })
+    // .attr("y", function (d) {
+    //     return y(d.y);
+    // });
+
+
+
+    // .text(function(d){return d.abbr; })
+    // .attr("xLinearScale", function (d) {
+    //     return xLinearScale(d.xLinearScale);
+    // })
+    // .attr("yLinearScale", function (d) {
+    //     return yLinearScale(d.yLinearScale);
+    // });
 
     // Step 6: Initialize tool tip
     // ==============================
