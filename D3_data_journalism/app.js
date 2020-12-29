@@ -35,7 +35,7 @@ d3.csv("data.csv").then(function(data) {
     // Step 2: Create scale functions
     // ==============================
     var xLinearScale = d3.scaleLinear()
-      .domain([20, d3.max(data, d => d.age)])
+      .domain([25, d3.max(data, d => d.age)])
       .range([0, width]);
 
     var yLinearScale = d3.scaleLinear()
@@ -83,7 +83,7 @@ d3.csv("data.csv").then(function(data) {
 
     // Step 8: Create event listeners to display and hide the tooltip
     // ==============================
-    circlesGroup.on("click", function(data) {
+    circlesGroup.on("mouseover", function(data) {
       toolTip.show(data, this);
     })
       // onmouseout event
