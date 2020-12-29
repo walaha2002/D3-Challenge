@@ -65,7 +65,7 @@ d3.csv("data.csv").then(function(data) {
     .attr("cx", d => xLinearScale(d.age))
     .attr("cy", d => yLinearScale(d.smokes))
     .attr("r", "15")
-    .attr("fill", "pink")
+    .attr("fill", "lightblue")
     .attr("opacity", ".5");
 
     // Step 6: Initialize tool tip
