@@ -98,12 +98,12 @@ d3.csv("data.csv").then(function(data) {
       .attr("x", 0 - (height / 2))
       .attr("dy", "1em")
       .attr("class", "axisText")
-      .text("Age");
+      .text("Smoking");
 
     chartGroup.append("text")
       .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
       .attr("class", "axisText")
-      .text("Smoking");
+      .text("Age");
   }).catch(function(error) {
     console.log(error);
   });
