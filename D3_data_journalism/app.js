@@ -99,12 +99,38 @@ d3.csv("data.csv").then(function (data) {
         .attr("x", 0 - (height / 2))
         .attr("dy", "1em")
         .attr("class", "axisText")
-        .text("Smoking");
+        .text("Smokes (%)");
 
     chartGroup.append("text")
         .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
         .attr("class", "axisText")
-        .text("Age");
+        .text("Age (Median)");
 }).catch(function (error) {
     console.log(error);
 });
+
+
+// function makeResponsive() {
+
+//     // if the SVG area isn't empty when the browser loads,
+//     // remove it and replace it with a resized version of the chart
+//   var svgArea = d3.select("body").select("svg");
+
+//   if (!svgArea.empty()) {
+//     svgArea.remove();
+//   }
+
+//     // svg params
+//   var svgHeight = window.innerHeight;
+//   var svgWidth = window.innerWidth;
+
+//   // etc - make the chart!
+//   ...
+
+// }
+
+// makeResponsive();
+
+// // Event listener for window resize.
+// // When the browser window is resized, makeResponsive() is called.
+// d3.select(window).on("resize", makeResponsive);
