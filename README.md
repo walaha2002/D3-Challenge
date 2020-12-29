@@ -26,7 +26,7 @@ The data set included with the assignment is based on 2014 ACS 1-year estimates 
 
 ### Core Assignment: D3 Dabbler (Required Assignment)
 
-![4-scatter](Images/4-scatter.jpg)
+![4-scatter](/Images/4-scatter.jpg)
 
 You need to create a scatter plot between two of the data variables such as `Healthcare vs. Poverty` or `Smokers vs. Age`.
 
@@ -44,7 +44,7 @@ Using the D3 techniques we taught you in class, create a scatter plot that repre
 
 Why make a static graphic when D3 lets you interact with your data?
 
-![7-animated-scatter](Images/7-animated-scatter.gif)
+![7-animated-scatter](/Images/7-animated-scatter.gif)
 
 #### 1. More Data, More Dynamics
 
