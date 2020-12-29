@@ -1,5 +1,22 @@
-// Source: Class Activity Unit 3/Activity 9
+// // Event listener for window resize.
+// // When the browser window is resized, makeResponsive() is called.
+d3.select(window).on("resize", makeResponsive);
 
+// When the browser loads, loadChart() is called
+loadChart();
+
+function makeResponsive() {
+    var svgArea = d3.select("svg");
+  
+    // If there is already an svg container on the page, remove it and reload the chart
+    if (!svgArea.empty()) {
+      svgArea.remove();
+      loadChart();
+    }
+  }
+
+// Source: Class Activity Unit 3/Activity 9
+function loadChart(){
 var svgWidth = 960;
 var svgHeight = 500;
 
@@ -67,8 +84,9 @@ d3.csv("data.csv").then(function (data) {
         .attr("r", "15")
         .attr("fill", "lightblue")
         .attr("opacity", ".5")
-//Added labels to circles using post on stackoverflow
-//Source: https://stackoverflow.com/questions/55988709/how-can-i-add-labels-inside-the-points-in-a-scatterplot
+
+    //Added labels to circles using post on stackoverflow
+    //Source: https://stackoverflow.com/questions/55988709/how-can-i-add-labels-inside-the-points-in-a-scatterplot
 
     var stateLabel = chartGroup.selectAll(null).data(data).enter().append("text");
 
@@ -153,27 +171,4 @@ d3.csv("data.csv").then(function (data) {
 });
 
 
-// function makeResponsive() {
-
-//     // if the SVG area isn't empty when the browser loads,
-//     // remove it and replace it with a resized version of the chart
-//   var svgArea = d3.select("body").select("svg");
-
-//   if (!svgArea.empty()) {
-//     svgArea.remove();
-//   }
-
-//     // svg params
-//   var svgHeight = window.innerHeight;
-//   var svgWidth = window.innerWidth;
-
-//   // etc - make the chart!
-//   ...
-
-// }
-
-// makeResponsive();
-
-// // Event listener for window resize.
-// // When the browser window is resized, makeResponsive() is called.
-// d3.select(window).on("resize", makeResponsive);
+}
