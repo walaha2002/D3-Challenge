@@ -5,17 +5,16 @@ d3.select(window).on("resize", makeResponsive);
 makeResponsive();
 
 function makeResponsive() {
-    var svgArea = d3.select("svg");
+    var svgArea = d3.select("body").select("svg");
 
     // If there is already an svg container on the page, remove it and reload the chart
     if (!svgArea.empty()) {
         svgArea.remove();
-        //         loadChart();
+
     }
     // }
 
     // Source: Class Activity Unit 3/Activity 9
-    // function loadChart() {
 
     // var svgWidth = 960;
     // var svgHeight = 500;
@@ -174,4 +173,4 @@ function makeResponsive() {
     });
 
 
-}
+ }
