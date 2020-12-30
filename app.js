@@ -1,5 +1,5 @@
-// // Event listener for window resize.
-// // When the browser window is resized, makeResponsive() is called.
+// Event listener for window resize.
+// When the browser window is resized, makeResponsive() is called.
 d3.select(window).on("resize", makeResponsive);
 
 makeResponsive();
@@ -12,12 +12,8 @@ function makeResponsive() {
         svgArea.remove();
 
     }
-    // }
 
     // Source: Class Activity Unit 3/Activity 9
-
-    // var svgWidth = 960;
-    // var svgHeight = 500;
 
     var svgWidth = window.innerWidth;
     var svgHeight = window.innerHeight;
@@ -107,29 +103,6 @@ function makeResponsive() {
             .attr("text-anchor", "middle")
             .attr("fill", "darkblue");
 
-        // var gdots =  svg.selectAll("g.dot")
-        // .data(data)
-        // .enter().append('g');
-
-        // gdots.append("text").text(function(d){
-        //     return d.name;
-        // })
-        // .attr("x", function (d) {
-        //     return x(d.x);
-        // })
-        // .attr("y", function (d) {
-        //     return y(d.y);
-        // });
-
-
-
-        // .text(function(d){return d.abbr; })
-        // .attr("xLinearScale", function (d) {
-        //     return xLinearScale(d.xLinearScale);
-        // })
-        // .attr("yLinearScale", function (d) {
-        //     return yLinearScale(d.yLinearScale);
-        // });
 
         // Step 6: Initialize tool tip
         // ==============================
@@ -172,5 +145,4 @@ function makeResponsive() {
         console.log(error);
     });
 
-
- }
+}
