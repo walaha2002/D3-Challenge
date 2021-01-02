@@ -1,5 +1,6 @@
 // Event listener for window resize.
 // When the browser window is resized, makeResponsive() is called.
+// Source: Instructor provided D3 cheat sheet
 d3.select(window).on("resize", makeResponsive);
 
 makeResponsive();
@@ -10,11 +11,9 @@ function makeResponsive() {
     // If there is already an svg container on the page, remove it and reload the chart
     if (!svgArea.empty()) {
         svgArea.remove();
-
     }
 
     // Source: Class Activity Unit 3/Activity 9
-
     var svgWidth = window.innerWidth;
     var svgHeight = window.innerHeight;
 
@@ -110,7 +109,7 @@ function makeResponsive() {
             .attr("class", "d3-tip")
             .offset([80, -60])
             .html(function (d) {
-                return (`${d.state}<br>Age: ${d.age}<br>Smokes (%): ${d.smokes}`);
+                return (`${d.state}<br>Age (Median): ${d.age}<br>Smokes (%): ${d.smokes}`);
             });
 
         // Step 7: Create tooltip in the chart
